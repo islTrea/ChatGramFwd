@@ -4,9 +4,6 @@ This makes a user send all messages from one/many chat(s) to another chat(s).
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-[![YouTube Video](https://img.shields.io/badge/youtube-video-red)](https://youtu.be/_83nexTIUaU) - Deploy Tutorial On YouTube
-
-[![YouTube Video](https://img.shields.io/badge/youtube-video-red)](https://youtu.be/ctdQhVOxd0I) - Heroku Error Solution
 
 ## Setting up 
 * First:
@@ -24,8 +21,8 @@ Add the above values to the environment vars and deploy the bot.
 <details>
 <summary>Local Deoploys</summary>
 <br>
-- Clone the repo:   <code>git clone https://github.com/Ayush7445/telegram-auto_forwarder</code></br>
-- Make a <code>.env</code> file in the root of the repo, like <a href="https://github.com/Ayush7445/telegram-auto_forwarder/blob/main/.env.sample">.env.sample</a> and fill in the values.</br>
+- Clone the repo:   <code>git clone https://github.com/islTrea/ChatGramFwd</code></br>
+- Make a <code>.env</code> file in the root of the repo, like <a href="https://github.com/islTrea/ChatGramFwd/blob/main/.env.sample">.env.sample</a> and fill in the values.</br>
 - Use <code>python3 bot.py</code> to start the bot.</br>  
 </details>
 
@@ -34,7 +31,7 @@ All new messages will be auto-posted!!
 Join the channel from you want the posts to be taken.
 Join as admin in the channel where you want the posts to be sent to.
 
-[![Telegram Channel](https://img.shields.io/badge/Telegram-Channel-blue)](https://t.me/joinchat/QiGxI8jGZKA4Mjll) - Join it for Update purpose. 
+[![Telegram Channel](https://img.shields.io/badge/Telegram-Channel-blue)]() - Join it for Update purpose. 
 
 ## Credits
 > [Lonami](https://github.com/LonamiWebs), for [Telethon](https://github.com/LonamiWebs/Telethon).   
