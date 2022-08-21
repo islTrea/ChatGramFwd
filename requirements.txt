@@ -3,4 +3,3 @@ telethon
 pylint
 requests
 websocket-client==0.56
-install -U git+git://github.com/Lu-Yi-Hsun/iqoptionapi.git
