@@ -52,38 +52,40 @@ receivedHTM = "GO"
 @BotzHubUser.on(events.NewMessage(incoming=True, chats=FROM))
 async def sender_bH(event):
     while True:
-        if receivedHTM in (event.message).lower():
+        #if receivedHTM in (event.message).lower():
+	#if "A" == "A":
 	    #if receivedHTM == "GO":
-		    if order == "put":
-			    #ACTION_call="put"
+	    if "test" == "test":
+		if order == "put":
+		#ACTION_call="put"
 			
         	    #order_sell,id_put=I_want_money.buy(Money,ACTIVES,ACTION_call,expirations_mode)
-			    order_put,id_put = API.buy_digital_spot("EURUSD",1, "put",1) 
-			    print("Order Put")
-			    if order_put == True: 
-				    while True:
-					    check_put, win_put = API.check_win_digital_v2(id_put) 
-					    if check_put == True:
-						    break
-				    if win_put > 0:
-					    print("Put win") 
-				    else:
-					    print("Put LOSE")
+		    order_put,id_put = API.buy_digital_spot("EURUSD",1, "put",1) 
+		    print("Order Put")
+		    if order_put == True: 
+			while True:
+			    check_put, win_put = API.check_win_digital_v2(id_put) 
+			    if check_put == True:
+			 	break
+			if win_put > 0:
+			    print("Put win") 
+			else:
+			    print("Put LOSE")
 				
-		    if order == "call":
-			    #ACTION_call="call"
+		if order == "call":
+		#ACTION_call="call"
         	    #order_buy,id_call=I_want_money.buy(Money,ACTIVES,ACTION_call,expirations_mode)
-			    order_call,id_call = API.call_digital_spot("EURUSD",1, "call",1) 
-			    print("Order Put")
-			    if order_call == True: 
-				    while True:
-					    check_call, win_call = API.check_win_digital_v2(id_call) 
-					    if check_call == True:
-						    break
-				    if win_call > 0:
-					    print("Call win") 
-				    else:
-					    print("Call LOSE")
+		    order_call,id_call = API.call_digital_spot("EURUSD",1, "call",1) 
+		    print("Order Put")
+		    if order_call == True: 
+			while True:
+			    check_call, win_call = API.check_win_digital_v2(id_call) 
+			    if check_call == True:
+				break
+			    if win_call > 0:
+				print("Call win") 
+			    else:
+				print("Call LOSE")
 
 print("Bot has started.")
 BotzHubUser.run_until_disconnected()
