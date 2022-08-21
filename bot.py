@@ -29,7 +29,7 @@ API_HASH = config("API_HASH", default=None)
 SESSION = config("SESSION")
 FROM_ = config("FROM_CHANNEL")
 
-USER = config("IQ_UserNmae")
+USER = config("IQ_UserName")
      
 PWS = config("IQ_PWS")
       
