@@ -3,4 +3,4 @@ telethon
 pylint
 requests
 websocket-client==0.56
-git+git://github.com/Lu-Yi-Hsun/iqoptionapi.git@master
+git+git://github.com/Lu-Yi-Hsun/iqoptionapi.git
