@@ -23,6 +23,12 @@
         },
         "SESSION": {
             "description": "Enter the session id got from repl https://replit.com/@TeamUltroid/UltroidStringSession"
+        },
+        "IQ_UserNmae": {
+            "description": "Enter the IQoption username"
+        },
+        "IQ_PWS": {
+            "description": "Enter the IQoption password"
         }
     },
     "buildpacks": [
