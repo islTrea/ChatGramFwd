@@ -3,6 +3,6 @@ telethon
 pylint
 requests
 websocket-client==0.56
-git+git remote set-url origin https://github.com/Lu-Yi-Hsun/iqoptionapi.git@master
+git+https://github.com/Lu-Yi-Hsun/iqoptionapi.git@master
 
 
