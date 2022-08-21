@@ -29,12 +29,23 @@ API_HASH = config("API_HASH", default=None)
 SESSION = config("SESSION")
 FROM_ = config("FROM_CHANNEL")
 
-USER = ("IQ_UserNmae")
+USER = config("IQ_UserNmae")
      
-PWS = ("IQ_PWS")
+PWS = config("IQ_PWS")
       
 FROM = [int(i) for i in FROM_.split()]
 
+##
+API = IQ_Option(USER, PWS)
+ch1, ch2 = API.connect()
+
+if ch1 == True:
+	print("Login Successfull !") 
+else:
+	print("Login Failed !") 
+	quit()
+	
+##	
 try:
     BotzHubUser = TelegramClient(StringSession(SESSION), APP_ID, API_HASH)
     BotzHubUser.start()
