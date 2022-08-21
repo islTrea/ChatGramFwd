@@ -21,7 +21,7 @@
         "SESSION": {
             "description": "Enter the session id got from repl https://replit.com/@TeamUltroid/UltroidStringSession"
         },
-        "IQ_UserNmae": {
+        "IQ_UserName": {
             "description": "Enter the IQoption username"
         },
         "IQ_PWS": {
