@@ -61,11 +61,8 @@ async def new_message(event):
   Iq.change_balance(Account_Type)
   
   my_blc=Iq.get_balance()
+  app.send_message(to_chats , "Balance: "+str(my_blc))
   print(f"Balance: {my_blc} ")
-  try:
-      await app.send_message(to_chats , "Balance: "+str(my_blc))
-  except Exception as e:
-            print(e)
   
   #SET TRADE PARAMETERS 
   #Money=10 #AMOUNT PER OPTION
@@ -159,7 +156,7 @@ async def new_message(event):
   	#CALL OPTION 
   	if trade == "call":
   	#CALL OPTION 
-  		app.send_message(to_chats,"Trade: "+trade + " Currency Pair: "+market+ " Expiry: "+expirations_mode+" Min "+ " $ "+Money )
+  		app.send_message(to_chats,"Trade: "+trade + " Currency Pair: "+market+ " Expiry: "+str(expirations_mode)+" Min "+ " $ "+str(Money) )
   		print("Green")
   		check, id=Iq.buy (Money, market, "call", expirations_mode)
   		if check:
@@ -172,7 +169,7 @@ async def new_message(event):
   				trade = ""
   				minutes = ""
   				market = ""
-  				app.send_message(to_chats , "Win/Loss: " + Iq.check_win_v3(id) + "New Balance: "+Iq.get_balance() )
+  				app.send_message(to_chats , "Win/Loss: " + Iq.check_win_v3(id) + "New Balance: "+str(Iq.get_balance()) )
   				print(Iq.check_win_v3(id)) 
   		else:
   			tradeON = False
@@ -182,7 +179,7 @@ async def new_message(event):
   	 		
   	elif trade == "put":
   	#PUT OPTION 
-  		app.send_message(to_chats , "Trade: "+trade + " Currency Pair: "+market+ " Expiry: "+expirations_mode+" Min "+ " $ "+Money )
+  		app.send_message(to_chats , "Trade: "+trade + " Currency Pair: "+market+ " Expiry: "+str(expirations_mode)+" Min "+ " $ "+str(Money) )
   		print("Red") 
   		check, id=Iq. buy (Money, market, "put", expirations_mode)
   		if check:
@@ -194,7 +191,7 @@ async def new_message(event):
   				trade = ""
   				minutes = ""
   				market = ""
-  				app.send_message(to_chats , "Win/Loss: " + Iq.check_win_v3(id)+ "New Balance: "+Iq.get_balance() )
+  				app.send_message(to_chats , "Win/Loss: " + Iq.check_win_v3(id)+ "New Balance: "+str(Iq.get_balance()) )
   				print(Iq.check_win_v3(id))  
   		else: 
   			tradeON = False
