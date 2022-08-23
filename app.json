@@ -26,6 +26,12 @@
         },
         "IQ_PWS": {
             "description": "Enter the IQoption password"
+        },
+        "PERCENTAGE": {
+            "description": "Enter the IQoption percentage on balance"
+        },
+        "ACCOUNT_TYPE": {
+            "description": "Enter PRACTICE or REAL"
         }
     },
     "buildpacks": [
