@@ -63,7 +63,10 @@ async def new_message(event):
   Iq.change_balance("PRACTICE")
   
   my_blc=Iq.get_balance()
-  await app.send_message(to_chats , "Balance: "+str(my_blc))
+  try:
+    await app.send_message(to_chats , "Balance: "+str(my_blc))  
+  except Exception as e:
+    print(e)
   print(f"Balance: {my_blc} ")
   
   
@@ -158,7 +161,10 @@ async def new_message(event):
     #CALL OPTION 
     if trade == "call":
     #CALL OPTION 
-      await app.send_message(to_chats,"Trade: "+trade + " Currency Pair: "+market+ " Expiry: "+str(expirations_mode)+" Min "+ " $ "+str(Money) )
+      try:
+        await app.send_message(to_chats,"Trade: "+trade + " Currency Pair: "+market+ " Expiry: "+str(expirations_mode)+" Min "+ " $ "+str(Money) )  
+      except Exception as e:
+        print(e)
       print("Green")
       check, id=Iq.buy (Money, market, "call", expirations_mode)
       if check:
@@ -171,7 +177,10 @@ async def new_message(event):
           trade = ""
           minutes = ""
           market = ""
-          await app.send_message(to_chats , "Win/Loss: " + Iq.check_win_v3(id) + "New Balance: "+str(Iq.get_balance()) )
+          try:
+            await app.send_message(to_chats , "Win/Loss: " + Iq.check_win_v3(id) + "New Balance: "+str(Iq.get_balance()) )  
+          except Exception as e:
+            print(e)  
           print(Iq.check_win_v3(id)) 
       else:
         tradeON = False
@@ -181,7 +190,10 @@ async def new_message(event):
   	 		
     elif trade == "put":
   	#PUT OPTION 
-      await app.send_message(to_chats , "Trade: "+trade + " Currency Pair: "+market+ " Expiry: "+str(expirations_mode)+" Min "+ " $ "+str(Money) )
+      try:
+        await app.send_message(to_chats,"Trade: "+trade + " Currency Pair: "+market+ " Expiry: "+str(expirations_mode)+" Min "+ " $ "+str(Money) )  
+      except Exception as e:
+        print(e)
       print("Red") 
       check, id=Iq. buy (Money, market, "put", expirations_mode)
       if check:
@@ -194,7 +206,10 @@ async def new_message(event):
           trade = ""
           minutes = ""
           market = ""
-          await app.send_message(to_chats , "Win/Loss: " + Iq.check_win_v3(id)+ "New Balance: "+str(Iq.get_balance()) )
+          try:
+            await app.send_message(to_chats , "Win/Loss: " + Iq.check_win_v3(id) + "New Balance: "+str(Iq.get_balance()) )  
+          except Exception as e:
+            print(e)
           print(Iq.check_win_v3(id))  
       else: 
         tradeON = False
