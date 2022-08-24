@@ -63,7 +63,7 @@ async def new_message(event):
   Iq.change_balance("PRACTICE")
   
   my_blc=Iq.get_balance()
-  app.send_message(to_chats , "Balance: "+str(my_blc))
+  await app.send_message(to_chats , "Balance: "+str(my_blc))
   print(f"Balance: {my_blc} ")
   
   
@@ -158,48 +158,48 @@ async def new_message(event):
     #CALL OPTION 
     if trade == "call":
     #CALL OPTION 
-      app.send_message(to_chats,"Trade: "+trade + " Currency Pair: "+market+ " Expiry: "+str(expirations_mode)+" Min "+ " $ "+str(Money) )
+      await app.send_message(to_chats,"Trade: "+trade + " Currency Pair: "+market+ " Expiry: "+str(expirations_mode)+" Min "+ " $ "+str(Money) )
       print("Green")
       check, id=Iq.buy (Money, market, "call", expirations_mode)
       if check:
         print("'CALL' Option Placed.") 
         print("Awaiting 'Call Option Result...") 
-        app.send_message(to_chats , "Awaiting 'Call Option Result...")
+        await app.send_message(to_chats , "Awaiting 'Call Option Result...")
         #FUNCTION TO GET OPTION RESULT
         if(Iq.check_win_v3(id) !=""):
           tradeON = False
           trade = ""
           minutes = ""
           market = ""
-          app.send_message(to_chats , "Win/Loss: " + Iq.check_win_v3(id) + "New Balance: "+str(Iq.get_balance()) )
+          await app.send_message(to_chats , "Win/Loss: " + Iq.check_win_v3(id) + "New Balance: "+str(Iq.get_balance()) )
           print(Iq.check_win_v3(id)) 
       else:
         tradeON = False
         tradeReady == False
-        app.send_message(to_chats , " 'Put' Option Failed.")
+        await app.send_message(to_chats , " 'Put' Option Failed.")
         print("Call Option Failed.") 
   	 		
     elif trade == "put":
   	#PUT OPTION 
-      app.send_message(to_chats , "Trade: "+trade + " Currency Pair: "+market+ " Expiry: "+str(expirations_mode)+" Min "+ " $ "+str(Money) )
+      await app.send_message(to_chats , "Trade: "+trade + " Currency Pair: "+market+ " Expiry: "+str(expirations_mode)+" Min "+ " $ "+str(Money) )
       print("Red") 
       check, id=Iq. buy (Money, market, "put", expirations_mode)
       if check:
         print("'PUT' Option Placed.") 
         print("Awaiting 'Put' Option Result...") 
-        app.send_message(to_chats , "Awaiting 'Call Option Result...")
+        await app.send_message(to_chats , "Awaiting 'Call Option Result...")
         #FUNCTION TO GET OPTION RESULT
         if(Iq.check_win_v3(id) !=""):
           tradeON = False
           trade = ""
           minutes = ""
           market = ""
-          app.send_message(to_chats , "Win/Loss: " + Iq.check_win_v3(id)+ "New Balance: "+str(Iq.get_balance()) )
+          await app.send_message(to_chats , "Win/Loss: " + Iq.check_win_v3(id)+ "New Balance: "+str(Iq.get_balance()) )
           print(Iq.check_win_v3(id))  
       else: 
         tradeON = False
         tradeReady == False
-        app.send_message(to_chats , " 'Put' Option Failed.")
+        await app.send_message(to_chats , " 'Put' Option Failed.")
         print(" 'Put' Option Failed.")
   
 
