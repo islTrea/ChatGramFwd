@@ -11,7 +11,7 @@ UserName = config("IQ_UserName")
 UserPass = config("IQ_PWS")
 
 percentUsed = config("PERCENTAGE")
-Account_Type = config("ACCOUNT_TYPE")
+AccountType = config("ACCOUNT_TYPE")
 
 Iq=IQ_Option(UserName, UserPass)
   
@@ -50,25 +50,17 @@ async def new_message(event):
   
   #################################
   
-  if Iq.check_connect()==False: 
-    iqch1, iqch2=Iq.connect()
-  	
-  if iqch1==True:
-      print("IqOption reconnect In Successful.") 
-  else:   
-      print("IqOption reconnect failed.")
-
+  
   #Iq.change_balance("REAL")
   
-  Iq.change_balance("PRACTICE")
+  Iq.change_balance(AccountType)
   
   my_blc=Iq.get_balance()
   try:
-    await app.send_message(to_chats , "Balance: "+str(my_blc))  
+    await app.send_message(to_chats , "Account Type: "+AccountType+" Balance: "+str(my_blc))  
   except Exception as e:
     print(e)
   print(f"Balance: {my_blc} ")
-  
   
   #SET TRADE PARAMETERS 
   #Money=10 #AMOUNT PER OPTION
