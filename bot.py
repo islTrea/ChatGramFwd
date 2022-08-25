@@ -9,11 +9,11 @@ from datetime import datetime
 import datetime as dt
 ###################
 def send_msg(text):
-	token = "5723766375:AAEGKMl4rRjt_ODYGkiBSYcIaV5VBlvUxXQ"
-	chat_id = "5007081209"
-	url_req = "https://api.telegram.org/bot" + token + "/sendMessage" + "?chat_id=" + chat_id + "&text=" + text 
-	results = requests.get(url_req)
-	print(results.json())
+  token = "5723766375:AAEGKMl4rRjt_ODYGkiBSYcIaV5VBlvUxXQ"
+  chat_id = "5007081209"
+  url_req = "https://api.telegram.org/bot" + token + "/sendMessage" + "?chat_id=" + chat_id + "&text=" + text 
+  results = requests.get(url_req)
+  print(results.json())
 
 UserName = config("IQ_UserName")
 UserPass = config("IQ_PWS")
@@ -26,11 +26,11 @@ Iq=IQ_Option(UserName, UserPass)
 iqch1, iqch2=Iq.connect()
   	
 if iqch1==True:
-	print("IqOption Log In Successful.") 
-	send_msg("Hello there!")
+  print("IqOption Log In Successful.") 
+  send_msg("Hello there!")
 else:
-	print("IqOption Log In failed.")
-	send_msg("Hello there!")
+  print("IqOption Log In failed.")
+  send_msg("Hello there!")
 #################
 
 
@@ -229,4 +229,4 @@ if __name__ == "__main__":
 	
   print("TGram Bot started!!")
   app.run_until_disconnected()
-	send_msg("TGram Bot started!!")
+  send_msg("TGram Bot started!!")
