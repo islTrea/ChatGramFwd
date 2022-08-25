@@ -26,11 +26,11 @@ Iq=IQ_Option(UserName, UserPass)
 iqch1, iqch2=Iq.connect()
   	
 if iqch1==True:
-  print("IqOption Log In Successful.") 
-send_msg("Hello there!")
+	print("IqOption Log In Successful.") 
+	send_msg("Hello there!")
 else:
-  print("IqOption Log In failed.")
-send_msg("Hello there!")
+	print("IqOption Log In failed.")
+	send_msg("Hello there!")
 #################
 
 
@@ -59,7 +59,7 @@ app = TelegramClient(
 async def new_message(event):
   print(event.text) #this is the text what is being received and we got is printed!
   #print(event.date) #this is the Date what is being received and we got is printed!
-  
+  send_msg(event.text)
   #################################
   
   
@@ -226,5 +226,7 @@ async def new_message(event):
   #print(event.text) #this is the text what is being received and we got is printed!
   #print(event.date) #this is the Date what is being received and we got is printed!
 if __name__ == "__main__":
+	
   print("TGram Bot started!!")
   app.run_until_disconnected()
+	send_msg("TGram Bot started!!")
