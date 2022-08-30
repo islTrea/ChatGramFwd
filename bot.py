@@ -59,14 +59,14 @@ async def new_message(event):
   ############################
   newmessage = str(event.text)
 
-  confirm = "WAIT CONFRIM"
+  #confirm = "WAIT CONFRIM"
   ## percentage of balance to trade
-  percentOfBalance = percentUsed
+  percentOfBalance = float(0.1)
   Money = float("{:.2f}".format(my_blc * (percentOfBalance/100)))
   trade = ""
-  expirations_mode = ""
-  market = "" 
-  	
+  expirations_mode = "5"
+  market = "EUR/USD" 
+  '''	
   if confirm in newmessage:
     try:
       await app.send_message(to_chats , "IqOption: Wait Confirm active")  
@@ -111,7 +111,13 @@ async def new_message(event):
     except Exception as e:
       print(e)
     print("IqOption: GO is Active: ")
-
+	  '''
+  if "i" in newmessage.lower() or "ok" in newmessage.lower():
+    trade = "put" 
+    
+    print("I detected")
+	
+	
     #CALL OPTION 
     if trade == "call":
     #CALL OPTION 
